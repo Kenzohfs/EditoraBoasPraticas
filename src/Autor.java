@@ -5,7 +5,7 @@ public class Autor extends Pessoa {
 	public String listarAtividades() {
 		String livros = "";
 		for (int i = 0; i < Main.listaLivros.size(); i++) {
-			if (Main.listaLivros.get(i).getAutor() == Main.usuario && Main.listaLivros.get(i).getStatus() == 2) {
+			if (Main.listaLivros.get(i).getAutorLivro() == Main.usuario && Main.listaLivros.get(i).getStatusLivro() == 2) {
 				livros += Main.listaLivros.get(i).toString();
 			}
 		}
@@ -23,7 +23,7 @@ public class Autor extends Pessoa {
 	public String listarLivros() {
 		String livros = "";
 		for (int i = 0; i < Main.listaLivros.size(); i++) {
-			if (Main.listaLivros.get(i).getAutor() == Main.usuario) {
+			if (Main.listaLivros.get(i).getAutorLivro() == Main.usuario) {
 				livros += Main.listaLivros.get(i).toString();
 			}
 		}
@@ -33,7 +33,7 @@ public class Autor extends Pessoa {
 	@Override
 	public void editarLivro() {
 		int indiceLivro = Main.retornaLivro();
-		Main.listaLivros.get(indiceLivro).setStatus(1);
+		Main.listaLivros.get(indiceLivro).setStatusLivro(1);
 		// Aguardando Revisão
 	}
 

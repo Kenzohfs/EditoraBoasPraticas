@@ -113,7 +113,7 @@ public class Main {
 
 	public static int returnIndice(String email, String senha) {
 		for (int i = 0; i < listaPessoas.size(); i++) {
-			if (listaPessoas.get(i).getEmail().equals(email) && listaPessoas.get(i).getSenha().equals(senha)) {
+			if (listaPessoas.get(i).getEmailPessoa().equals(email) && listaPessoas.get(i).getSenhaPessoa().equals(senha)) {
 				usuario = listaPessoas.get(i);
 				return i;
 			}
@@ -179,7 +179,7 @@ public class Main {
 		}
 
 		System.out.println("Informe a ação a ser feita: ");
-		if (listaLivros.get(indiceLivro).getQtdPaginas() == paginasLidas) {
+		if (listaLivros.get(indiceLivro).getQtdPaginasLivro() == paginasLidas) {
 			System.out.println("\n1 - Aprovar \n2 - Reprovar \n3 - Mandar para Edição");
 		} else {
 			System.out.println("\n1 - Continuar Revisando \n2 - Reprovar \n3 - Mandar para Edição");
@@ -199,7 +199,7 @@ public class Main {
 		String isbn = sc.next();
 
 		for (int i = 0; i < listaLivros.size(); i++) {
-			if (isbn.equals(listaLivros.get(i).getIsbn())) {
+			if (isbn.equals(listaLivros.get(i).getIsbnLivro())) {
 				return i;
 			}
 		}
@@ -209,7 +209,7 @@ public class Main {
 	
 	public static void validaISBN(String isbn) {
 		for (int i = 0; i < listaLivros.size(); i++) {
-			if (isbn.equals(listaLivros.get(i).getIsbn())) {
+			if (isbn.equals(listaLivros.get(i).getIsbnLivro())) {
 				throw new LivroExistente();
 			}
 		}

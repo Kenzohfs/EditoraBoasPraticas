@@ -1,6 +1,6 @@
 
 public abstract class Pessoa {
-	private String nome, cpf, sobrenome, email, genero, senha;
+	private String nomePessoa, cpfPessoa, sobrenomePessoa, emailPessoa, generoPessoa, senhaPessoa;
 	
 	public abstract String listarLivros();
 	
@@ -10,14 +10,14 @@ public abstract class Pessoa {
 	
 	public abstract String listarAtividades();
 
-	public Pessoa(String nome, String cpf, String sobrenome, String email, String genero, String senha) {
+	public Pessoa(String nomePessoa, String cpfPessoa, String sobrenomePessoa, String emailPessoa, String generoPessoa, String senhaPessoa) {
 		super();
-		this.nome = nome;
-		this.cpf = cpf;
-		this.sobrenome = sobrenome;
-		this.email = email;
-		this.genero = genero;
-		this.senha = senha;
+		this.nomePessoa = nomePessoa;
+		this.cpfPessoa = cpfPessoa;
+		this.sobrenomePessoa = sobrenomePessoa;
+		this.emailPessoa = emailPessoa;
+		this.generoPessoa = generoPessoa;
+		this.senhaPessoa = senhaPessoa;
 	}
 
 	public Pessoa() {
@@ -27,55 +27,55 @@ public abstract class Pessoa {
 
 	@Override
 	public String toString() {
-		return "Nome: " + nome + "\nCPF: " + cpf + "\nSobrenome: " + sobrenome + "\nEmail: " + email + "\nGênero: "
-				+ genero + "\nSenha: " + senha;
+		return "Nome: " + nomePessoa + "\nCPF: " + cpfPessoa + "\nSobrenome: " + sobrenomePessoa + "\nEmail: " + emailPessoa + "\nGênero: "
+				+ generoPessoa + "\nSenha: " + senhaPessoa;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomePessoa() {
+		return nomePessoa;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomePessoa(String nomePessoa) {
+		this.nomePessoa = nomePessoa;
 	}
 
-	public String getCpf() {
-		return cpf;
+	public String getCpfPessoa() {
+		return cpfPessoa;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public void setCpfPessoa(String cpfPessoa) {
+		this.cpfPessoa = cpfPessoa;
 	}
 
-	public String getSobrenome() {
-		return sobrenome;
+	public String getSobrenomePessoa() {
+		return sobrenomePessoa;
 	}
 
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
+	public void setSobrenomePessoa(String sobrenomePessoa) {
+		this.sobrenomePessoa = sobrenomePessoa;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getEmailPessoa() {
+		return emailPessoa;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmailPessoa(String emailPessoa) {
+		this.emailPessoa = emailPessoa;
 	}
 
-	public String getGenero() {
-		return genero;
+	public String getGeneroPessoa() {
+		return generoPessoa;
 	}
 
-	public void setGenero(String genero) {
-		this.genero = genero;
+	public void setGeneroPessoa(String generoPessoa) {
+		this.generoPessoa = generoPessoa;
 	}
 
-	public String getSenha() {
-		return senha;
+	public String getSenhaPessoa() {
+		return senhaPessoa;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setSenhaPessoa(String senhaPessoa) {
+		this.senhaPessoa = senhaPessoa;
 	}
 }

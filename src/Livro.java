@@ -1,83 +1,83 @@
 
 public class Livro {
-	private String titulo, isbn;
-	private int status, qtdPaginas, qtdPaginasRevisadas = 0;
-	private Autor autor;
-	private Editora editora;
+	private String tituloLivro, isbnLivro;
+	private int statusLivro, qtdPaginasLivro, qtdPaginasRevisadasLivro = 0;
+	private Autor autorLivro;
+	private Editora editoraLivro;
 
-	public Livro(String titulo, String isbn, int status, int qtdPaginas, Autor autor) {
+	public Livro(String tituloLivro, String isbnLivro, int statusLivro, int qtdPaginasLivro, Autor autorLivro) {
 		super();
-		this.titulo = titulo;
-		this.isbn = isbn;
-		this.status = status;
-		this.qtdPaginas = qtdPaginas;
-		this.autor = autor;
+		this.tituloLivro = tituloLivro;
+		this.isbnLivro = isbnLivro;
+		this.statusLivro = statusLivro;
+		this.qtdPaginasLivro = qtdPaginasLivro;
+		this.autorLivro = autorLivro;
 	}
 
 	@Override
 	public String toString() {
-		if (this.getEditora() != null) {
-		return "----------------\nTitulo: " + titulo + "\nIsbn: " + isbn + "\nStatus: " + status + "\nQuantidade de Páginas: "
-				+ qtdPaginas + "\n" + autor + "\nEditora: " + editora;
+		if (this.getEditoraLivro() != null) {
+		return "----------------\nTitulo: " + tituloLivro + "\nIsbn: " + isbnLivro + "\nStatus: " + statusLivro + "\nQuantidade de Páginas: "
+				+ qtdPaginasLivro + "\n" + autorLivro + "\nEditora: " + editoraLivro;
 		} else {
-			return "----------------\nTitulo: " + titulo + "\nIsbn: " + isbn + "\nStatus: " + status + "\nQuantidade de Páginas: "
-					+ qtdPaginas + "\n" + autor + "\n";
+			return "----------------\nTitulo: " + tituloLivro + "\nIsbn: " + isbnLivro + "\nStatus: " + statusLivro + "\nQuantidade de Páginas: "
+					+ qtdPaginasLivro + "\n" + autorLivro + "\n";
 		}
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public String getTituloLivro() {
+		return tituloLivro;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public void setTituloLivro(String tituloLivro) {
+		this.tituloLivro = tituloLivro;
 	}
 
-	public String getIsbn() {
-		return isbn;
+	public String getIsbnLivro() {
+		return isbnLivro;
 	}
 
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
+	public void setIsbnLivro(String isbnLivro) {
+		this.isbnLivro = isbnLivro;
 	}
 
-	public int getStatus() {
-		return status;
+	public int getStatusLivro() {
+		return statusLivro;
 	}
 
-	public void setStatus(int status) {
-		this.status = status;
+	public void setStatusLivro(int statusLivro) {
+		this.statusLivro = statusLivro;
 	}
 
-	public int getQtdPaginas() {
-		return qtdPaginas;
+	public int getQtdPaginasLivro() {
+		return qtdPaginasLivro;
 	}
 
-	public void setQtdPaginas(int qtdPaginas) {
-		this.qtdPaginas = qtdPaginas;
+	public void setQtdPaginasLivro(int qtdPaginasLivro) {
+		this.qtdPaginasLivro = qtdPaginasLivro;
 	}
 
-	public Autor getAutor() {
-		return autor;
+	public Autor getAutorLivro() {
+		return autorLivro;
 	}
 
-	public void setAutor(Autor autor) {
-		this.autor = autor;
+	public void setAutorLivro(Autor autorLivro) {
+		this.autorLivro = autorLivro;
 	}
 
-	public Editora getEditora() {
-		return editora;
+	public Editora getEditoraLivro() {
+		return editoraLivro;
 	}
 
-	public void setEditora(Editora editora) {
-		this.editora = editora;
+	public void setEditoraLivro(Editora editoraLivro) {
+		this.editoraLivro = editoraLivro;
 	}
 
-	public int getQtdPaginasRevisadas() {
-		return qtdPaginasRevisadas;
+	public int getQtdPaginasRevisadasLivro() {
+		return qtdPaginasRevisadasLivro;
 	}
 
-	public void setQtdPaginasRevisadas(int qtdPaginasRevisadas) {
-		this.qtdPaginasRevisadas = qtdPaginasRevisadas;
+	public void setQtdPaginasRevisadasLivro(int qtdPaginasRevisadasLivro) {
+		this.qtdPaginasRevisadasLivro = qtdPaginasRevisadasLivro;
 	}
 }

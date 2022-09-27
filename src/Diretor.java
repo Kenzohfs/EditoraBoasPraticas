@@ -4,7 +4,7 @@ public class Diretor extends Pessoa {
 	public String listarAtividades() {
 		String livros = "";
 		for (int i = 0; i < Main.listaLivros.size(); i++) {
-			if (Main.listaLivros.get(i).getStatus() == 5) {
+			if (Main.listaLivros.get(i).getStatusLivro() == 5) {
 				livros += Main.listaLivros.get(i).toString();
 			}
 		}
@@ -35,13 +35,13 @@ public class Diretor extends Pessoa {
 		}
 		switch (status) {
 		case 1:
-			Main.listaLivros.get(indiceLivro).setStatus(6); // Publicar
+			Main.listaLivros.get(indiceLivro).setStatusLivro(6); // Publicar
 			break;
 		case 2:
-			Main.listaLivros.get(indiceLivro).setStatus(4); // Reprovar
+			Main.listaLivros.get(indiceLivro).setStatusLivro(4); // Reprovar
 			break;
 		case 3:
-			Main.listaLivros.get(indiceLivro).setStatus(1); // Aguardando revisão
+			Main.listaLivros.get(indiceLivro).setStatusLivro(1); // Aguardando revisão
 			break;
 		}
 	}

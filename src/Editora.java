@@ -1,11 +1,11 @@
 
 public class Editora {
-	private String nome, cnpj;
+	private String nomeEditora, cnpjEditora;
 
-	public Editora(String nome, String cnpj) {
+	public Editora(String nomeEditora, String cnpjEditora) {
 		super();
-		this.nome = nome;
-		this.cnpj = cnpj;
+		this.nomeEditora = nomeEditora;
+		this.cnpjEditora = cnpjEditora;
 	}
 
 	public Editora() {
@@ -15,22 +15,22 @@ public class Editora {
 
 	@Override
 	public String toString() {
-		return "Nome: " + nome + "\nCNPJ: " + cnpj;
+		return "Nome: " + nomeEditora + "\nCNPJ: " + cnpjEditora;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomeEditora() {
+		return nomeEditora;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeEditora(String nomeEditora) {
+		this.nomeEditora = nomeEditora;
 	}
 
-	public String getCnpj() {
-		return cnpj;
+	public String getCnpjEditora() {
+		return cnpjEditora;
 	}
 
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
+	public void setCnpjEditora(String cnpjEditora) {
+		this.cnpjEditora = cnpjEditora;
 	}
 }
