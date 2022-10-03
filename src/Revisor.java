@@ -54,10 +54,8 @@ public class Revisor extends Pessoa {
 			int status = Main.selecionaEdicao(indiceLivro);
 			switch (status) {
 			case 1:
-				System.out.println("entrou case 1");
 				if (Main.listaLivros.get(indiceLivro).getQtdPaginasLivro() == Main.listaLivros.get(indiceLivro)
 						.getQtdPaginasRevisadasLivro()) {
-					System.out.println("entrou verificacação");
 					Main.listaLivros.get(indiceLivro).setStatusLivro(5); // Aprovado
 				} else {
 					removerLivro = false;

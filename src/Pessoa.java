@@ -31,7 +31,16 @@ public abstract class Pessoa {
 	 * 		Aguardando Revisão (1);
 	 */
 	public abstract void editarLivro();
-	
+
+	/**
+	 * Mostra as opções de acordo com o usuário.
+	 * Caso Autor terá as opções { Listar Atividades, Listar Livros, Cadastrar Livro, Sair,
+	 * 				Encerrar };
+	 * Caso Revisor terá as opções { Listar Atividades, Listar Livros, Sair, Encerrar };
+	 * Caso Diretor terá as opções { Listar Atividades, Listar Livros, Cadastrar Revisor, Sair,
+	 * 				Encerrar }.
+	 * @return Lista de opções do usuário (String[])
+	 */
 	public abstract String[] opcoes();
 
 	/**

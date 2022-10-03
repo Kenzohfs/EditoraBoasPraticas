@@ -170,6 +170,9 @@ public class Main {
 		return new Livro(titulo, isbn, 1, qtdPaginas, (Autor) usuario);
 	}
 
+	/**
+	 * Adicionando alguns objetos nas listas para facilitar o uso.
+	 */
 	public static void addPadrao() {
 		Diretor diretor = new Diretor("Kenzo", "12345678901", "Sato", "kenzo@gmail.com", "M", "123");
 		Autor autor = new Autor("Felipe", "cpf", "Vieira", "felipe@gmail.com", "M", "123");
@@ -203,12 +206,21 @@ public class Main {
 		return sc.nextInt();
 	}
 
+	/**
+	 * Solicita a ação a ser feita quando for editar.
+	 * @return Opção para fazer edição
+	 */
 	public static int selecionaEdicao() {
 		System.out.println("Informe a ação a ser feita: ");
 		System.out.println("\n1 - Publicar \n2 - Reprovar \n3 - Mandar para Edição");
 		return sc.nextInt();
 	}
 
+	/**
+	 * Solicita e procura um livro a partir de seu ISBN.
+	 * @return Indice do livro na lista de livros
+	 * @throws CodigoInvalido
+	 */
 	public static int retornaLivro() {
 		System.out.println("Selecione o livro a ser editado: ");
 		String isbn = sc.next();
@@ -221,7 +233,12 @@ public class Main {
 		
 		throw new CodigoInvalido();
 	}
-	
+
+	/**
+	 * Verifica se o ISBN já existe, caso exista lança uma Exceção.
+	 * @param isbn
+	 * @throws LivroExistente
+	 */
 	public static void validaISBN(String isbn) {
 		for (int i = 0; i < listaLivros.size(); i++) {
 			if (isbn.equals(listaLivros.get(i).getIsbnLivro())) {
