@@ -26,15 +26,9 @@ public class Main {
 		int opcao = sc.nextInt();
 
 		switch (opcao) {
-		case 1:
-			login();
-			break;
-		case 2:
-			cadastrar();
-			break;
-		case 3:
-			System.exit(0);
-			break;
+			case 1 -> login();
+			case 2 -> cadastrar();
+			case 3 -> System.exit(0);
 		}
 		menuEntrar();
 	}
