@@ -14,9 +14,14 @@ public class Revisor extends Pessoa {
 		return livros;
 	}
 
+	/**
+	 * Método que verifica se um livro está contido na lista de livros do revisor.
+	 *
+	 * @param livro
+	 * @return True se o livro passada como parâmetro foi encontrado na lista de livros do revisor
+	 */
 	private boolean listaLivrosRevisorContem(Livro livro) {
 		for (Livro livroDoRevisor : listaLivrosRevisor) {
-			System.out.println(livro == livroDoRevisor);
 			if (livroDoRevisor == livro) {
 				return true;
 			}
@@ -25,7 +30,7 @@ public class Revisor extends Pessoa {
 	}
 
 	@Override
-	public String[] opcoes() {
+	public String[] buscarOpcoes() {
 		return new String[] { "1 - Listar Atividades", "2 - Listar Livros ", "3 - Sair ", "4 - Encerrar" };
 	}
 
@@ -42,58 +47,45 @@ public class Revisor extends Pessoa {
 
 	@Override
 	public void editarLivro() {
-		int indiceLivro = Main.retornaLivro();
-		Boolean removerLivro = true;
-		if (Main.listaLivros.get(indiceLivro).getStatusLivro() == 1) {
-			Main.listaLivros.get(indiceLivro).setStatusLivro(3);
+		int indiceLivro = Main.retornarIndiceLivro();
+		Livro livroEmRevisao = Main.listaLivros.get(indiceLivro);
+		boolean removerLivro = true;
+		if (livroEmRevisao.getStatusLivro() == 1) {
+			livroEmRevisao.setStatusLivro(3);
 			// Em revisão
 
-			this.listaLivrosRevisor.add(Main.listaLivros.get(indiceLivro));
+			this.listaLivrosRevisor.add(livroEmRevisao);
 
-		} else if (Main.listaLivros.get(indiceLivro).getStatusLivro() == 3) {
-			int status = Main.selecionaEdicao(indiceLivro);
+		} else if (livroEmRevisao.getStatusLivro() == 3) {
+			int status = Main.selecionarAcaoEdicao(indiceLivro);
 			switch (status) {
 			case 1:
-				if (Main.listaLivros.get(indiceLivro).getQtdPaginasLivro() == Main.listaLivros.get(indiceLivro)
+				if (livroEmRevisao.getQtdPaginasLivro() == livroEmRevisao
 						.getQtdPaginasRevisadasLivro()) {
-					Main.listaLivros.get(indiceLivro).setStatusLivro(5); // Aprovado
+					livroEmRevisao.setStatusLivro(5); // Aprovado
 				} else {
 					removerLivro = false;
 				}
-				System.out.println(Main.listaLivros.get(indiceLivro).getStatusLivro());
 				// else: vai ficar com o mesmo status, no caso, em revisão
 				break;
 			case 2:
-				Main.listaLivros.get(indiceLivro).setStatusLivro(4); // Reprovado
+				livroEmRevisao.setStatusLivro(4); // Reprovado
 				break;
 			case 3:
-				Main.listaLivros.get(indiceLivro).setStatusLivro(2); // Aguardando Edição
+				livroEmRevisao.setStatusLivro(2); // Aguardando Edição
 				break;
 			default:
 				throw new StatusInvalido();
 			}
 			if (removerLivro) {
-				listaLivrosRevisor.remove(indiceLivro);
+				listaLivrosRevisor.remove(livroEmRevisao);
 			}
 		}
-	}
-
-	public Revisor() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Revisor(String nome, String cpf, String sobrenome, String email, String genero, String senha) {
 		super(nome, cpf, sobrenome, email, genero, senha);
 		// TODO Auto-generated constructor stub
-	}
-
-	public ArrayList<Livro> getListaLivrosRevisor() {
-		return listaLivrosRevisor;
-	}
-
-	public void setListaLivrosRevisor(ArrayList<Livro> listaLivrosRevisor) {
-		this.listaLivrosRevisor = listaLivrosRevisor;
 	}
 
 }

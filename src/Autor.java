@@ -13,7 +13,7 @@ public class Autor extends Pessoa {
 	}
 
 	@Override
-	public String[] opcoes() {
+	public String[] buscarOpcoes() {
 
 		return new String[] { "1 - Listar Atividades", "2 - Listar Livros ", "3 - Cadastrar Livro", "4 - Sair ",
 				"5 - Encerrar" };
@@ -32,14 +32,9 @@ public class Autor extends Pessoa {
 
 	@Override
 	public void editarLivro() {
-		int indiceLivro = Main.retornaLivro();
+		int indiceLivro = Main.retornarIndiceLivro();
 		Main.listaLivros.get(indiceLivro).setStatusLivro(1);
 		// Aguardando Revisão
-	}
-
-	public Autor() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Autor(String nome, String cpf, String sobrenome, String email, String genero, String senha) {

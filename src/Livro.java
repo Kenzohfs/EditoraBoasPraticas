@@ -25,20 +25,8 @@ public class Livro {
 		}
 	}
 
-	public String getTituloLivro() {
-		return tituloLivro;
-	}
-
-	public void setTituloLivro(String tituloLivro) {
-		this.tituloLivro = tituloLivro;
-	}
-
 	public String getIsbnLivro() {
 		return isbnLivro;
-	}
-
-	public void setIsbnLivro(String isbnLivro) {
-		this.isbnLivro = isbnLivro;
 	}
 
 	public int getStatusLivro() {
@@ -53,16 +41,8 @@ public class Livro {
 		return qtdPaginasLivro;
 	}
 
-	public void setQtdPaginasLivro(int qtdPaginasLivro) {
-		this.qtdPaginasLivro = qtdPaginasLivro;
-	}
-
 	public Autor getAutorLivro() {
 		return autorLivro;
-	}
-
-	public void setAutorLivro(Autor autorLivro) {
-		this.autorLivro = autorLivro;
 	}
 
 	public Editora getEditoraLivro() {

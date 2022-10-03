@@ -12,7 +12,7 @@ public class Diretor extends Pessoa {
 	}
 
 	@Override
-	public String[] opcoes() {
+	public String[] buscarOpcoes() {
 		return new String[] { "1 - Listar Atividades", "2 - Listar Livros ", "3 - Cadastrar Revisor", "4 - Sair ",
 				"5 - Encerrar" };
 	}
@@ -28,8 +28,8 @@ public class Diretor extends Pessoa {
 
 	@Override
 	public void editarLivro() {
-		int indiceLivro = Main.retornaLivro();
-		int status = Main.selecionaEdicao();
+		int indiceLivro = Main.retornarIndiceLivro();
+		int status = Main.selecionarAcaoEdicao();
 		Livro livro = Main.listaLivros.get(indiceLivro);
 		if (status > 6 || status < 1) {
 			throw new StatusInvalido();
@@ -46,11 +46,6 @@ public class Diretor extends Pessoa {
 			livro.setStatusLivro(1); // Aguardando revisão
 			break;
 		}
-	}
-
-	public Diretor() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Diretor(String nome, String cpf, String sobrenome, String email, String genero, String senha) {
