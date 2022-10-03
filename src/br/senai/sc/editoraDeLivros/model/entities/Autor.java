@@ -1,3 +1,6 @@
+package br.senai.sc.editoraDeLivros.model.entities;
+
+import br.senai.sc.editoraDeLivros.model.Main;
 
 public class Autor extends Pessoa {
 

@@ -1,3 +1,4 @@
+package br.senai.sc.editoraDeLivros.model.exceptions;
 
 public class LoginIncorreto extends RuntimeException {
 	public LoginIncorreto() {

@@ -1,3 +1,4 @@
+package br.senai.sc.editoraDeLivros.model.entities;
 
 public class Livro {
     private String tituloLivro, isbnLivro;

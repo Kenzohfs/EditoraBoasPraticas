@@ -1,3 +1,4 @@
+package br.senai.sc.editoraDeLivros.model.entities;
 
 public class Editora {
 	private String nomeEditora, cnpjEditora;
@@ -10,6 +11,6 @@ public class Editora {
 
 	@Override
 	public String toString() {
-		return "Nome: " + nomeEditora + "\nCNPJ: " + cnpjEditora;
+		return "Nome: " + nomeEditora + "\nCNPJ: " + cnpjEditora + "\n";
 	}
 }

@@ -1,3 +1,4 @@
+package br.senai.sc.editoraDeLivros.model.entities;
 
 public abstract class Pessoa {
     private String nomePessoa, cpfPessoa, sobrenomePessoa, emailPessoa, generoPessoa, senhaPessoa;

@@ -1,3 +1,7 @@
+package br.senai.sc.editoraDeLivros.model.entities;
+
+import br.senai.sc.editoraDeLivros.model.Main;
+import br.senai.sc.editoraDeLivros.model.exceptions.*;
 
 public class Diretor extends Pessoa {
     @Override
