@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Aplicação de uma Editora de Livros:
+ * Aplicação de uma Editora de Livros;
  * @author Kenzo Sato
  * Perfis: Autor, Revisor e Diretor;
  * Funcionalidades por perfil:
@@ -186,6 +186,12 @@ public class Main {
 		listaEditoras.add(editora);
 	}
 
+	/**
+	 *
+	 * @param indiceLivro
+	 * @throws QtdPaginasInvalida
+	 * @return
+	 */
 	public static int selecionaEdicao(int indiceLivro) {
 		System.out.println("Informe a quantidade de páginas totais que foram revisadas:");
 		int paginasLidas = sc.nextInt();
@@ -208,7 +214,7 @@ public class Main {
 
 	/**
 	 * Solicita a ação a ser feita quando for editar.
-	 * @return Opção para fazer edição
+	 * @return Opção para fazer edição (Int)
 	 */
 	public static int selecionaEdicao() {
 		System.out.println("Informe a ação a ser feita: ");
@@ -218,7 +224,7 @@ public class Main {
 
 	/**
 	 * Solicita e procura um livro a partir de seu ISBN.
-	 * @return Indice do livro na lista de livros
+	 * @return Indice do livro na lista de livros  (Int)
 	 * @throws CodigoInvalido
 	 */
 	public static int retornaLivro() {
