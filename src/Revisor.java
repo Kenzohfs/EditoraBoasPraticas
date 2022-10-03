@@ -6,10 +6,22 @@ public class Revisor extends Pessoa {
 	@Override
 	public String listarAtividades() {
 		String livros = "";
-		for (int i = 0; i < this.listaLivrosRevisor.size(); i++) {
-			livros += listaLivrosRevisor.get(i).toString();
+		for (Livro livro : Main.listaLivros) {
+			if (livro.getStatusLivro() == 1 || listaLivrosRevisorContem(livro)) {
+				livros += livro.toString();
+			}
 		}
 		return livros;
+	}
+
+	private boolean listaLivrosRevisorContem(Livro livro) {
+		for (Livro livroDoRevisor : listaLivrosRevisor) {
+			System.out.println(livro == livroDoRevisor);
+			if (livroDoRevisor == livro) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@Override
@@ -31,6 +43,7 @@ public class Revisor extends Pessoa {
 	@Override
 	public void editarLivro() {
 		int indiceLivro = Main.retornaLivro();
+		Boolean removerLivro = true;
 		if (Main.listaLivros.get(indiceLivro).getStatusLivro() == 1) {
 			Main.listaLivros.get(indiceLivro).setStatusLivro(3);
 			// Em revisão
@@ -41,11 +54,16 @@ public class Revisor extends Pessoa {
 			int status = Main.selecionaEdicao(indiceLivro);
 			switch (status) {
 			case 1:
+				System.out.println("entrou case 1");
 				if (Main.listaLivros.get(indiceLivro).getQtdPaginasLivro() == Main.listaLivros.get(indiceLivro)
 						.getQtdPaginasRevisadasLivro()) {
+					System.out.println("entrou verificacação");
 					Main.listaLivros.get(indiceLivro).setStatusLivro(5); // Aprovado
+				} else {
+					removerLivro = false;
 				}
-				// else: vai ficar com o mesmo status, no caso, aguardando edição
+				System.out.println(Main.listaLivros.get(indiceLivro).getStatusLivro());
+				// else: vai ficar com o mesmo status, no caso, em revisão
 				break;
 			case 2:
 				Main.listaLivros.get(indiceLivro).setStatusLivro(4); // Reprovado
@@ -56,7 +74,9 @@ public class Revisor extends Pessoa {
 			default:
 				throw new StatusInvalido();
 			}
-			listaLivrosRevisor.remove(indiceLivro);
+			if (removerLivro) {
+				listaLivrosRevisor.remove(indiceLivro);
+			}
 		}
 	}
 

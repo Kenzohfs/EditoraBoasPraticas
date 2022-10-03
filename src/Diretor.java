@@ -30,18 +30,20 @@ public class Diretor extends Pessoa {
 	public void editarLivro() {
 		int indiceLivro = Main.retornaLivro();
 		int status = Main.selecionaEdicao();
+		Livro livro = Main.listaLivros.get(indiceLivro);
 		if (status > 6 || status < 1) {
 			throw new StatusInvalido();
 		}
 		switch (status) {
 		case 1:
-			Main.listaLivros.get(indiceLivro).setStatusLivro(6); // Publicar
+			livro.setEditoraLivro(Main.listaEditoras.get(0));
+			livro.setStatusLivro(6); // Publicar
 			break;
 		case 2:
-			Main.listaLivros.get(indiceLivro).setStatusLivro(4); // Reprovar
+			livro.setStatusLivro(4); // Reprovar
 			break;
 		case 3:
-			Main.listaLivros.get(indiceLivro).setStatusLivro(1); // Aguardando revisão
+			livro.setStatusLivro(1); // Aguardando revisão
 			break;
 		}
 	}

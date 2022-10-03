@@ -1,11 +1,30 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Aplicação de uma Editora de Livros:
+ * @author Kenzo Sato
+ * Perfis: Autor, Revisor e Diretor;
+ * Funcionalidades por perfil:
+ * 	- Autor:
+ * 		- Cadastrar livro;
+ * 		- Listar seus livros;
+ * 		- Listar suas atividades;
+ *
+ * 	- Revisor:
+ * 		- Listar seus livros;
+ * 		- Listar suas atividades;
+ *
+ * 	- Diretor:
+ * 		- Cadastrar revisor;
+ * 		- Listar seus livros;
+ * 		- Listar suas atividades;
+ */
 public class Main {
 	static Scanner sc = new Scanner(System.in);
 	public static ArrayList<Livro> listaLivros = new ArrayList<Livro>();
 	public static ArrayList<Pessoa> listaPessoas = new ArrayList<Pessoa>();
-	private static ArrayList<Editora> listaEditoras = new ArrayList<Editora>();
+	public static ArrayList<Editora> listaEditoras = new ArrayList<Editora>();
 	public static Pessoa usuario;
 
 	// Anotações sobre os status:
@@ -168,9 +187,11 @@ public class Main {
 		System.out.println("Informe a quantidade de páginas totais que foram revisadas:");
 		int paginasLidas = sc.nextInt();
 		
-		if (paginasLidas < 0) {
+		if (paginasLidas < 0 || paginasLidas > listaLivros.get(indiceLivro).getQtdPaginasLivro()) {
 			throw new QtdPaginasInvalida();
 		}
+
+		listaLivros.get(indiceLivro).setQtdPaginasRevisadasLivro(paginasLidas);
 
 		System.out.println("Informe a ação a ser feita: ");
 		if (listaLivros.get(indiceLivro).getQtdPaginasLivro() == paginasLidas) {
