@@ -2,6 +2,7 @@ package br.senai.sc.editoraDeLivros.model;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
 import br.senai.sc.editoraDeLivros.model.entities.*;
 import br.senai.sc.editoraDeLivros.model.exceptions.*;
 
